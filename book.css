@@ -1,0 +1,167 @@
+body {
+  background: #111;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #00f0ff;
+  text-align: center;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+.booking-form .form-control {
+  background: rgba(26,26,64,0.7);
+  border: 2px solid #00f0ff;
+  border-radius: 10px;
+  padding: 12px 15px;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.booking-form .form-control::placeholder {
+  color: #ccc;
+}
+
+.booking-form .form-control:focus {
+  background: rgba(26,26,64,0.9);
+  border-color: #ff00ff;
+  color: #fff;
+  box-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
+}
+
+.btn-booking {
+  background: #00f0ff;
+  color: #111;
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 50px;
+  box-shadow: 0 0 15px #00f0ff, 0 0 25px #ff00ff;
+  transition: 0.4s;
+}
+
+.btn-booking:hover {
+  background: #ff00ff;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff00ff, 0 0 40px #00f0ff;
+}
+
+/* Modal Styles */
+.modal-content {
+  background: rgba(26,26,64,0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  color: #00f0ff;
+  box-shadow: 0 0 25px #00f0ff, 0 0 40px #ff00ff;
+  text-align: center;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
+}
+
+.modal-body i {
+  font-size: 3rem;
+  color: #00f0ff;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,100% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+}
+
+.btn-contact {
+  background: #00f0ff;
+  color: #111;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: bold;
+  box-shadow: 0 0 15px #00f0ff, 0 0 25px #ff00ff;
+  transition: 0.3s;
+}
+
+.btn-contact:hover {
+  background: #ff00ff;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff00ff, 0 0 40px #00f0ff;
+}
+
+@media(max-width:576px){
+  .section-title{font-size:2rem;}
+  .btn-booking{padding:10px 20px;}
+  .booking-form .form-control{padding:10px 12px;}
+}
+
+/* Modal Background & Content */
+.modal-content {
+  background: rgba(26,26,64,0.85) !important; /* dark semi-transparent */
+  backdrop-filter: blur(10px);               /* blur effect */
+  border-radius: 15px !important;
+  color: #00f0ff !important;
+  box-shadow: 0 0 25px #00f0ff, 0 0 40px #ff00ff;
+  text-align: center;
+  border: none !important;
+}
+
+/* Modal Header */
+.modal-header {
+  border-bottom: none !important;
+}
+
+/* Modal Title */
+.modal-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #00f0ff;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
+  margin: auto;
+}
+
+/* Modal Body */
+.modal-body {
+  color: #00f0ff;
+}
+
+.modal-body i {
+  font-size: 3rem;
+  color: #00f0ff;
+  margin-bottom: 15px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%,100% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+}
+
+/* Modal Footer */
+.modal-footer {
+  border-top: none !important;
+  justify-content: center;
+}
+
+.btn-contact {
+  background: #00f0ff !important;
+  color: #111 !important;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: bold;
+  box-shadow: 0 0 15px #00f0ff, 0 0 25px #ff00ff;
+  transition: 0.3s;
+}
+
+.btn-contact:hover {
+  background: #ff00ff !important;
+  color: #fff !important;
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff00ff, 0 0 40px #00f0ff;
+}

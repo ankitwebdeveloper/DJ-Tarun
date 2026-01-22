@@ -1,0 +1,276 @@
+/* Navbar Styles */
+.custom-navbar {
+  background: rgba(26, 26, 64, 0.6); /* Semi-transparent */
+  padding: 15px 30px;
+  position: fixed; /* Fixed on top */
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: background 0.3s ease;
+}
+
+/* Brand */
+.custom-navbar .navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00f0ff; /* Electric Cyan Neon */
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
+}
+
+/* Center nav links */
+.custom-navbar .navbar-nav {
+  text-align: center;
+}
+
+.custom-navbar .nav-link {
+  color: #fff;
+  margin: 0 15px;
+  position: relative;
+  transition: 0.3s;
+  background: transparent !important; /* Fix black bg on hover/focus */
+}
+
+.custom-navbar .nav-link:hover {
+  color: #00f0ff;
+  text-shadow: 0 0 12px #00f0ff, 0 0 25px #ff00ff;
+}
+
+/* Remove Bootstrap default dropdown arrow */
+.custom-navbar .dropdown-toggle::after {
+  display: none;
+}
+
+/* Dropdown Menu */
+.custom-navbar .dropdown-menu {
+  background: rgba(26, 26, 64, 0.85);
+  border: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  left: 20px; /* Shift dropdown slightly to right */
+}
+
+/* Show dropdown on hover for desktop only */
+@media (min-width: 992px) {
+  .custom-navbar .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* Dropdown Items */
+.custom-navbar .dropdown-item {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.custom-navbar .dropdown-item:hover {
+  color: #00f0ff;
+  background: #1a1a40;
+  text-shadow: 0 0 10px #00f0ff;
+}
+
+/* Book Now Button */
+.custom-navbar .btn-book {
+  background: #00f0ff;
+  color: #111;
+  font-weight: bold;
+  box-shadow: 0 0 12px #00f0ff, 0 0 22px #ff00ff;
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: 50px;
+  animation: glowBeat 2.5s infinite ease-in-out;
+}
+
+/* Auto Beat Glow Animation */
+@keyframes glowBeat {
+  0%, 100% {
+    box-shadow: 0 0 12px #00f0ff, 0 0 22px #ff00ff;
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px #00f0ff, 0 0 45px #ff00ff;
+    transform: scale(1.05);
+  }
+}
+
+/* Hover glow + pulse ring */
+.custom-navbar .btn-book:hover {
+  background: #00ffff;
+  transform: scale(1.1);
+}
+
+/* Soundwave ring on hover */
+.custom-navbar .btn-book::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00f0ff;
+  border-radius: 50px;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+.custom-navbar .btn-book:hover::before {
+  animation: pulseWave 1.2s ease-out infinite;
+}
+
+/* Wave animation */
+@keyframes pulseWave {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .custom-navbar .btn-book {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Remove focus/border */
+.custom-navbar .nav-link:focus,
+.custom-navbar .dropdown-toggle:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* Navbar scroll effect (optional) */
+.custom-navbar.scrolled {
+  background: rgba(26, 26, 64, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* ===== Responsive Styles ===== */
+
+/* Tablets & Small Desktops */
+@media (max-width: 991px) {
+  .custom-navbar .navbar-nav {
+    text-align: left;
+    margin-top: 10px;
+  }
+  .custom-navbar .btn-book {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .custom-navbar .dropdown-menu {
+    left: 0 !important;
+    width: 100%; /* Full width on mobile */
+    opacity: 1; /* Always visible for mobile click toggle */
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 576px) {
+  .custom-navbar .navbar-brand {
+    font-size: 1.5rem;
+  }
+  .custom-navbar .nav-link {
+    margin: 5px 0;
+    font-size: 0.95rem;
+  }
+  .custom-navbar .btn-book {
+    font-size: 0.95rem;
+    padding: 8px 15px;
+  }
+}
+
+/* Hamburger / Toggler Icon - Neon Color */
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 240, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Tablets & Mobile Dropdown Fix */
+@media (max-width: 991px) {
+  .custom-navbar .dropdown-menu {
+    opacity: 1 !important;      /* always visible for mobile click */
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    position: static;           /* dropdown flows in menu vertically */
+    background: rgba(26,26,64,0.95);
+    margin-top: 0;
+    width: 100%;
+  }
+  .custom-navbar .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-section {
+  background: #111;
+  backdrop-filter: blur(10px);
+  color: #00f0ff;
+  font-size: 0.95rem;
+}
+
+.footer-title {
+  color: #00f0ff;
+  font-weight: bold;
+  text-shadow: 0 0 8px #00f0ff, 0 0 15px #00ffff;
+  margin-bottom: 15px;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #00f0ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00f0ff;
+}
+
+.footer-divider {
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.social-links a {
+  color: #00f0ff;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  text-shadow: 0 0 8px #00f0ff, 0 0 15px #00ffff;
+}
+
+.social-links a:hover {
+  color: #00ffff;
+  transform: scale(1.2);
+  text-shadow: 0 0 15px #00f0ff, 0 0 25px #00ffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-section .row {
+    text-align: center;
+  }
+  .footer-section .col-md-4 {
+    margin-bottom: 20px;
+  }
+}
+

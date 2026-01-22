@@ -1,0 +1,92 @@
+/* ===== DJ Card Section ===== */
+.dj-card-section {
+  background: #111; /* Dark background same as services/hero */
+  color: #fff;
+  padding: 80px 0;
+}
+
+.dj-card-section .section-title {
+  font-size: 2.5rem;
+  color: #00f0ff;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 0 0 10px #00f0ff, 0 0 20px #ff00ff;
+}
+
+/* ===== Cards Row & Column ===== */
+.dj-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Individual Card */
+.dj-card {
+  background: rgba(26,26,64,0.7);
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1 1 calc(33.333% - 20px); /* 3 cards per row */
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Hover Effect */
+.dj-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px #00f0ff, 0 0 40px #ff00ff;
+}
+
+/* Card Image */
+.dj-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.dj-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Card Title */
+.dj-card h4 {
+  color: #00f0ff;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Card Description */
+.dj-card p {
+  color: #ddd;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .dj-card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row on tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .dj-card {
+    flex: 1 1 100%; /* 1 card per row on mobile */
+  }
+  .dj-card img {
+    height: 180px;
+  }
+  .dj-card h4 {
+    font-size: 1.3rem;
+  }
+  .dj-card p {
+    font-size: 0.9rem;
+  }
+}
